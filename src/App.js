@@ -1,24 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
+import { SnackbarProvider } from "notistack";
+
+import Medatechpay from "./components/Medatechpay";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <SnackbarProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/payments" element={<Medatechpay />} />
+          <Route path="/payments/:customer" element={<Medatechpay />} />
+        </Routes>
+      </BrowserRouter>
+    </SnackbarProvider>
   );
 }
 

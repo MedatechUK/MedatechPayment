@@ -24,7 +24,26 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>React App</title>
+    <title>Medatech Payment</title>
+    <script
+    src="https://secure.safewebservices.com/token/Collect.js"
+    data-tokenization-key="49YnQN-299y2D-v77SF3-88Brps"
+    data-custom-css= '{
+      "height": "30px",
+      "border-style": "solid",
+      "border-width" : "0.5px"
+    }'
+    data-validation-callback = "(function (field, valid, message) {console.log(field + ': ' + valid + ' -- ' + message)})"
+    data-style-sniffer="true"
+    data-focus-css='{
+        "border-color":"black",
+        "border-style": "solid",
+        "border-width" : "2px"
+    }'
+    data-timeout-duration = "10000"
+    data-timeout-callback = "(function() {console.log('Timeout reached')})"
+    window.validationCallback = data-validation-callback 
+  ></script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
